@@ -85,6 +85,7 @@
 
     9. Commit from vscode editor
             1. code . # from powershell it will open the vscode
+            2. Commit from VS code 
              
 
 
