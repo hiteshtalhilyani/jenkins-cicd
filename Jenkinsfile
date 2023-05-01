@@ -2,7 +2,7 @@ pipeline {
     agent any
     tools {
         maven "MAVEN3"
-        jdk "OpenJDK"
+        jdk "OracleJDK8"
     }
     environment {
         SNAP_REPO = 'webapp-snapshot'
