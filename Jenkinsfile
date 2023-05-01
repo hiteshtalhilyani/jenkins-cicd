@@ -81,7 +81,7 @@ pipeline {
                 nexusArtifactUploader(
                     nexusVersion: "${NEXUS_VERSION}",
                     protocol: 'http',
-                    nexusUrl: "${NEXUSIP}":"${NEXUSPORT}",
+                    nexusUrl: "${NEXUSIP}:${NEXUSPORT}",
                     groupId: 'QA',
                     version: "${ARTVERSION}",
                     repository: "${NEXUS_REPOSITORY}",
