@@ -16,13 +16,14 @@ pipeline {
         NEXUS_LOGIN = "nexus-login"
         SONARSERVER = 'sonarserver'
         SONARSCANNER = 'sonarscanner'
-        // NEXUS_VERSION = "nexus3"
-        // NEXUS_PROTOCOL = "http"
-        // NEXUS_URL = "3.110.128.159:8081"
-        // NEXUS_REPOSITORY = "webapp-release"
-        // NEXUS_REPOGRP_ID    = 
-        // NEXUS_CREDENTIAL_ID = "nexus-login"
-        // ARTVERSION = "${env.BUILD_ID}"
+        NEXUS_VERSION = "nexus3"
+        NEXUS_PROTOCOL = "http"
+        //NEXUS_URL = "3.110.128.159"
+        //NEXUS_PORT = "8081"
+        NEXUS_REPOSITORY = "webapp-release"
+        NEXUS_REPOGRP_ID    = 
+        NEXUS_CREDENTIAL_ID = "nexus-login"
+        ARTVERSION = "${env.BUILD_ID}-${env.BUILD_TIMESTAMP}"
 
     }
     stages {
@@ -74,6 +75,25 @@ pipeline {
                     waitForQualityGate abortPipeline: true
                 } 
             }
+        }
+        stage('Upload Artifact'){
+            steps {
+                nexusArtifactUploader(
+                    nexusVersion: "${NEXUS_VERSION}",
+                    protocol: 'http',
+                    nexusUrl: "${NEXUSIP}":"${NEXUSPORT}",
+                    groupId: 'QA',
+                    version: "${ARTVERSION}",
+                    repository: "${NEXUS_REPOSITORY}",
+                    credentialsId: "${NEXUS_CREDENTIAL_ID}",
+                    artifacts: [
+                        [artifactId: 'webapp',
+                        classifier: '',
+                        file: 'target/webapp-v2.war',
+                        type: 'war']
+                    ]
+                )
+            }         
         }
     }      
 }
