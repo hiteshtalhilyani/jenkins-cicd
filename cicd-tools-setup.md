@@ -79,6 +79,8 @@
     8. Change the URL of your repository 
         git remote set-url origin  https://github.com/hiteshtalhilyani/jenkins-cicd.git
         verify :  cat .git/config
+        clone repo:    git clone -b AWS-WebApp-Refactoring  https://github.com/hiteshtalhilyani/AWS-Cloud-WebApp.git
+
         create branch : git checkout -b ci-jenkins   #will create new branch
                         git checkout main 
                         git push --all origin
@@ -86,6 +88,11 @@
     9. Commit from vscode editor
             1. code . # from powershell it will open the vscode
             2. Commit from VS code 
+	    3. git config --global user.email "hiteshtalhilyani@outlook.com"
+	    4. git config --global user.name "Hitesh Talhilyani"
+        5. git config --global user.name 
+        6. git config --global user.email 
+        7. cat ~/.gitconfig
              
 
 
