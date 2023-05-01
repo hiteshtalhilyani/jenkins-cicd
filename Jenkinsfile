@@ -21,10 +21,9 @@ pipeline {
         //NEXUS_URL = "3.110.128.159"
         //NEXUS_PORT = "8081"
         NEXUS_REPOSITORY = "webapp-release"
-        NEXUS_REPOGRP_ID    = 
+        //NEXUS_REPOGRP_ID    = 
         //NEXUS_CREDENTIAL_ID = "nexus-login"
         //ARTVERSION = "${env.BUILD_ID} ${env.BUILD_TIMESTAMP}"
-
     }
     stages {
         stage('Build'){
