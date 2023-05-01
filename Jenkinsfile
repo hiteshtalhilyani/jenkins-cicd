@@ -23,7 +23,7 @@ pipeline {
         NEXUS_REPOSITORY = "webapp-release"
         NEXUS_REPOGRP_ID    = 
         //NEXUS_CREDENTIAL_ID = "nexus-login"
-        ARTVERSION = "${env.BUILD_ID}_${env.BUILD_TIMESTAMP}"
+        ARTVERSION = "${env.BUILD_ID}'+'${env.BUILD_TIMESTAMP}"
 
     }
     stages {
