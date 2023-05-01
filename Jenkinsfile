@@ -13,7 +13,7 @@ pipeline {
         NEXUSIP = '172.31.39.126'
         NEXUSPORT = '8081'
         NEXUS_GRP_REPO = 'webapp-maven-group'
-        NEXUS_LOGIN = "nexus-login"
+        NEXUS_LOGIN = "nexuslogin"
         SONARSERVER = 'sonarserver'
         SONARSCANNER = 'sonarscanner'
         NEXUS_VERSION = "nexus3"
@@ -22,7 +22,7 @@ pipeline {
         //NEXUS_PORT = "8081"
         NEXUS_REPOSITORY = "webapp-release"
         NEXUS_REPOGRP_ID    = 
-        NEXUS_CREDENTIAL_ID = "nexus-login"
+        //NEXUS_CREDENTIAL_ID = "nexus-login"
         ARTVERSION = "${env.BUILD_ID}-${env.BUILD_TIMESTAMP}"
 
     }
@@ -85,7 +85,7 @@ pipeline {
                     groupId: 'QA',
                     version: "${ARTVERSION}",
                     repository: "${NEXUS_REPOSITORY}",
-                    credentialsId: "${NEXUS_CREDENTIAL_ID}",
+                    credentialsId: "${NEXUS_LOGIN}",
                     artifacts: [
                         [artifactId: 'webapp',
                         classifier: '',
