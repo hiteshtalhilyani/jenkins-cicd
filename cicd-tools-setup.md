@@ -62,7 +62,7 @@
 # SonarQube Setup 
     1. Create ec2 instance with  ubuntu-20 , type: t2.medium 
     2. Run userdata.sh script
-    3. Access via IP : http://13.233.82.185/about   - default user : admin/admin
+    3. Access via IP : http://13.233.82.185/about   - default user : 
     4. systemctl status sonar
     5. 
 
@@ -79,7 +79,7 @@
     8. Change the URL of your repository 
         git remote set-url origin  https://github.com/hiteshtalhilyani/jenkins-cicd.git
         verify :  cat .git/config
-        clone repo:    git clone -b AWS-WebApp-Refactoring  https://github.com/hiteshtalhilyani/AWS-Cloud-WebApp.git
+        Exp clone repo:    git clone -b AWS-WebApp-Refactoring  https://github.com/hiteshtalhilyani/AWS-Cloud-WebApp.git
 
         create branch : git checkout -b ci-jenkins   #will create new branch
                         git checkout main 
