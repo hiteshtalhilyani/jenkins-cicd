@@ -39,7 +39,7 @@ pipeline {
         }
         stage('Test') {
             steps{
-                sh 'maven1 -s settings.xml test'
+                sh 'mvn -s settings.xml test'
             }
         }
         stage('Checkstyle Analysis'){
